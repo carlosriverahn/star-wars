@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { People } from '../models/people';
+import { StarShips } from '../models/star-ships';
+
+
 
 
 @Injectable({
@@ -14,11 +18,11 @@ export class SwapiService {
   constructor(private httpClient : HttpClient) {
    }
 
-   getData(endPoint: string){
-    const headers = new HttpHeaders({
-      //Authorization: this.token //removed to showing products without loggin 
-    });
-    //  debugger
-   return this.httpClient.get(`${this.url}${endPoint}`);
+   getStarships(endPoint: string):Observable<StarShips>{
+   return this.httpClient.get<StarShips>(`${this.url}${endPoint}`);
    }
+
+   getPeople(endPoint: string):Observable<People>{
+    return this.httpClient.get<People>(`${this.url}${endPoint}`);
+    }
 }

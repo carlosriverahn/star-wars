@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwapiService } from '../../services/swapi.service';
-import { Observable } from 'rxjs';
+import { StarShips, results } from '../../models/star-ships';
 
 @Component({
   selector: 'app-starships',
@@ -9,16 +9,19 @@ import { Observable } from 'rxjs';
 })
 export class StarshipsComponent implements OnInit {
 
-  starships:any = []
-  endPoint = "starships/"
-
-  constructor(private swapiService: SwapiService) { 
-    // debugger
-    this.swapiService.getData(this.endPoint).subscribe(data => {this.starships = data; console.log("cc",this.starships.results)});
-   }
-
+  starShips : results [] = [];
+  endPoint : string = "starships/"
+  
+  constructor(private swapiService : SwapiService){
+    
+  }
+  
   ngOnInit(): void {
-    console.log("oi",this.starships);
+    this.swapiService.getStarships(this.endPoint).subscribe(data => {this.starShips = data.results; console.log(this.starShips)});
   }
 
+  
+  
+
+    
 }

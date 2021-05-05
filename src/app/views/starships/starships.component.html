@@ -1,9 +1,10 @@
-<div class="card" style="width: 18rem;">
+<div *ngFor="let starShip of starShips, let i = index" class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <h5 class="card-title">Name: {{starShip.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Model: {{starShip.model}}</h6>
+      <p class="card-text">Cargo Capacity: {{starShip.cargo_capacity}}</p>
+      <p class="card-text">Consumables: {{starShip.consumables}}</p>
+      <p class="card-text">Cost in credits: {{starShip.cost_in_credits}}</p>
+      <p class="card-text">passengers: {{starShip.passengers}}</p>
     </div>
   </div>
