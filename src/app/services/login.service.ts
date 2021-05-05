@@ -12,7 +12,6 @@ export class LoginService {
   users: User [] = []
   token: string = "token"
   usersx: string =  "users"
-  public tokenx: EventEmitter<string> = new EventEmitter<string>();
   
   constructor() { }
 
@@ -48,15 +47,23 @@ export class LoginService {
 
   login(userForm:User){
     // debugger
+    let session!:boolean;
     this.users = this.usersMemory;
     this.users.find(user => {
       if(user.username === userForm.username && user.password === userForm.password){
         sessionStorage.setItem(this.token, <string>("true"));
-        this.tokenx.emit("true");
+        session = true
       }else{
         sessionStorage.setItem(this.token, <string>("false"));
+        session = false
       }
     });
+    if(session == true){
+      alert("Your login has been successful");
+    }else{
+      alert("Wrong username or password");
+    }
+    
   }
 
   logout(){
