@@ -1,10 +1,13 @@
-<div *ngFor="let starShip of starShips, let i = index" class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Name: {{starShip.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Model: {{starShip.model}}</h6>
-      <p class="card-text">Cargo Capacity: {{starShip.cargo_capacity}}</p>
-      <p class="card-text">Consumables: {{starShip.consumables}}</p>
-      <p class="card-text">Cost in credits: {{starShip.cost_in_credits}}</p>
-      <p class="card-text">passengers: {{starShip.passengers}}</p>
+<div class="d-flex justify-content-center m-auto container-fluid row">
+  <h1 class="col-12 m-2 text-light">StartShips Details</h1>
+  <div class="col-12 col-md-4 m-1 p-0 card" *ngFor="let starShip of starShips, let i = index" style="width: 18rem;">
+      <div class="card-body ">
+        <h5 class="card-title text-light">Name: {{starShip.name}}</h5>
+        <h6 class="card-subtitle mb-2  text-light">Model: {{starShip.model}}</h6>
+        <p class="card-text text-light">Cargo Capacity: {{starShip.cargo_capacity}}</p>
+        <p class="card-text text-light">Consumables: {{starShip.consumables}}</p>
+        <p class="card-text text-light">Cost in credits: {{starShip.cost_in_credits}}</p>
+        <p class="card-text text-light">passengers: {{starShip.passengers}}</p>
+      </div>
     </div>
-  </div>
+</div>
