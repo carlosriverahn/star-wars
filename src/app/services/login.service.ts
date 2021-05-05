@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { User } from '../models/user';
 
 
@@ -12,6 +12,7 @@ export class LoginService {
   users: User [] = []
   token: string = "token"
   usersx: string =  "users"
+  public tokenx: EventEmitter<string> = new EventEmitter<string>();
   
   constructor() { }
 
@@ -20,7 +21,7 @@ export class LoginService {
   }
 
   get tokenMemory() {
-    return JSON.parse(sessionStorage.getItem(this.token)!) || [];
+    return sessionStorage.getItem(this.token)! || undefined;
   }
 
   createUsers(users:User[]){
@@ -46,11 +47,12 @@ export class LoginService {
   }
 
   login(userForm:User){
-    debugger
+    // debugger
     this.users = this.usersMemory;
     this.users.find(user => {
       if(user.username === userForm.username && user.password === userForm.password){
         sessionStorage.setItem(this.token, <string>("true"));
+        this.tokenx.emit("true");
       }else{
         sessionStorage.setItem(this.token, <string>("false"));
       }
