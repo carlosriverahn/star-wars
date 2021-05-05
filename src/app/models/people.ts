@@ -2,10 +2,10 @@ export interface People {
     count:    number;
     next:     string;
     previous: null;
-    results:  Result[];
+    results:  results[];
 }
 
-export interface Result {
+export interface results {
     name:       string;
     height:     string;
     mass:       string;

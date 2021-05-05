@@ -19,9 +19,5 @@ export class StarshipsComponent implements OnInit {
   ngOnInit(): void {
     this.swapiService.getStarships(this.endPoint).subscribe(data => {this.starShips = data.results; console.log(this.starShips)});
   }
-
   
-  
-
-    
 }

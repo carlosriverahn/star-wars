@@ -13,6 +13,7 @@ import { StarshipsComponent } from './views/starships/starships.component';
 import { PeopleComponent } from './views/people/people.component';
 import { LoginComponent } from './views/home/login/login.component';
 import { SignUpComponent } from './views/home/sign-up/sign-up.component';
+import { ListStarShipsComponent } from './views/list-star-ships/list-star-ships.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { SignUpComponent } from './views/home/sign-up/sign-up.component';
     StarshipsComponent,
     PeopleComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ListStarShipsComponent
   ],
   imports: [
     BrowserModule,
