@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { NavbarMemberComponent } from './components/navbar-member/navbar-member.
 import { HomeComponent } from './views/home/home.component';
 import { StarshipsComponent } from './views/starships/starships.component';
 import { PeopleComponent } from './views/people/people.component';
+import { LoginComponent } from './views/home/login/login.component';
+import { SignUpComponent } from './views/home/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -20,12 +23,16 @@ import { PeopleComponent } from './views/people/people.component';
     NavbarMemberComponent,
     HomeComponent,
     StarshipsComponent,
-    PeopleComponent
+    PeopleComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
